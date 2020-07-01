@@ -1,4 +1,4 @@
-class SortManager {
+export class SortManager {
    input:number[];
    constructor(input:number[]) {
       this.input = input;
@@ -15,8 +15,3 @@ class SortManager {
       }
    }
 }
-
-let s = new SortManager([1, 2, 3 ,4 ,5]);
-s.printArray();
-s.shuffleArray();
-s.printArray();
