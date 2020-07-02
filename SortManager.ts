@@ -17,6 +17,12 @@ export class SortManager {
       this.printArray();
    }
    
+   swap(s:number, e:number): void {
+    let temp = this.input[e];
+    this.input[e] = this.input[s];
+    this.input[s] = temp;
+   }
+
    bubbleSort(idx:number): void {
 	if (idx == this.input.length) {
 		return;
@@ -30,9 +36,20 @@ export class SortManager {
 	this.bubbleSort(next);
    }
 
-   swap(s:number, e:number): void {
-    let temp = this.input[e];
-    this.input[e] = this.input[s];
-    this.input[s] = temp;
+   selectionSort(idx:number): void {
+	if (idx == this.input.length) {
+		return;
+	}
+	let minIdx = idx;
+	let minVal = this.input[minIdx];
+	for (let i = idx; i < this.input.length; i++) {
+		if (minVal > this.input[i]) {
+			minIdx = i;
+			minVal = this.input[i];
+		}
+	}
+	this.swap(idx, minIdx);
+	let next = idx + 1;
+	this.selectionSort(next);
    }
 }
