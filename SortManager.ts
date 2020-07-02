@@ -1,15 +1,30 @@
+import {Algo} from './Algo';
+
 export class SortManager {
    input:number[];
    constructor(input:number[]) {
       this.input = input;
    }
-
-   printArray():void {
+   doSort(t: Algo): void {
+	   this.shuffleArray();
+	   switch(+t){
+		case Algo.BUBLE:
+			console.log('Running bubble sort');
+			this.bubbleSort(0);
+			break;
+		case Algo.SELECTION:
+			console.log('Running selection sort');
+		        this.selectionSort(0);	
+			break;
+	   }	
+	   this.printArray();
+   }
+   private printArray():void {
       console.log(this.input);
    }
 
-   shuffleArray(): void {
-      console.log('shuffling');
+   private shuffleArray(): void {
+      console.log('shuffling...');
       for (let i = this.input.length - 1; i > 0; i--) {
          const j = Math.floor(Math.random() * (i + 1));
          [this.input[i], this.input[j]] = [this.input[j], this.input[i]];
@@ -17,13 +32,13 @@ export class SortManager {
       this.printArray();
    }
    
-   swap(s:number, e:number): void {
+   private swap(s:number, e:number): void {
     let temp = this.input[e];
     this.input[e] = this.input[s];
     this.input[s] = temp;
    }
 
-   bubbleSort(idx:number): void {
+   private bubbleSort(idx:number): void {
 	if (idx == this.input.length) {
 		return;
 	}
@@ -36,7 +51,7 @@ export class SortManager {
 	this.bubbleSort(next);
    }
 
-   selectionSort(idx:number): void {
+   private selectionSort(idx:number): void {
 	if (idx == this.input.length) {
 		return;
 	}
