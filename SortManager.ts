@@ -16,6 +16,10 @@ export class SortManager {
 			console.log('Running selection sort');
 		        this.selectionSort(0);	
 			break;
+		case Algo.INSERT:
+			console.log('Running insert sort');
+		        this.insertSort(0);	
+			break;
 	   }	
 	   this.printArray();
    }
@@ -67,4 +71,27 @@ export class SortManager {
 	let next = idx + 1;
 	this.selectionSort(next);
    }
+   
+   private insertSort(idx:number): void {
+	if (this.input.length <= idx) {
+		return;
+	}
+	let c = this.input[idx];
+	for (let i = 0; i <= idx; i++) {
+	   if (this.input[i] > c) {
+		this.shiftArray(i, idx);
+		this.input[i] = c;
+		break;
+	   }
+	}
+	let next = idx+1;
+	this.insertSort(next);
+   }
+
+  private shiftArray(start:number, end:number) {		
+	while (end > start) {
+		this.input[end] = this.input[end-1];	
+		end--;
+	}
+  }
 }

@@ -1,4 +1,5 @@
 export enum Algo {
  BUBLE,
- SELECTION
+ SELECTION,
+ INSERT
 }	
