@@ -1,5 +1,4 @@
-### Study sort algorithm with Typescript
-Typescript 를 알고리즘 테스트
+## Study algorithm with Typescript
 - quick sort
 - bubble sort
 - insert sort 
