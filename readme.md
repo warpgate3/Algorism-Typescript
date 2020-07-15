@@ -1,2 +1,7 @@
 ### Study sort algorithm with Typescript
-Typescript 를 이용해서 sort 알고리즘을 구현 해본다.
+Typescript 를 알고리즘 테스트
+- quick sort
+- bubble sort
+- insert sort 
+- selection sort
+- binary search
