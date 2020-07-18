@@ -1,6 +1,6 @@
 ## Study algorithm with Typescript
-- quick sort
 - bubble sort
 - insert sort 
 - selection sort
+- merge sort
 - binary search
