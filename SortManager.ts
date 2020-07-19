@@ -5,7 +5,7 @@ export class SortManager {
     temp: number[];
     constructor(input: number[]) {
         this.input = input;
-        this.temp = [];
+        this.temp = [];//for merge sort
     }
 
     doSort(t: Algo): void {
@@ -26,6 +26,10 @@ export class SortManager {
             case Algo.MERGE:
                 console.log('Running MERGE sort');
                 this.mergeSort(0, this.input.length - 1);
+                break;
+            case Algo.QUICK:
+                console.log('Running QUICK sort');
+                this.quickSort(0, this.input.length - 1);
                 break;
         }
         this.printArray();
@@ -134,4 +138,28 @@ export class SortManager {
         }
     }
 
+    private quickSort(start: number, end: number) {
+       let pivot = this.getPivot(start, end);
+       if (start < pivot - 1) {
+           this.quickSort(start, pivot -1);
+       }
+       if (pivot < end) {
+            this.quickSort(pivot, end);
+       }
+    }
+
+    private getPivot(start: number, end: number): number {
+       let pivot = this.input[Math.floor((start + end) / 2)];
+
+       while (start <= end) {
+           while (this.input[start] < pivot) start++
+           while (this.input[end] > pivot) end--;
+           if (start <= end) {
+               this.swap(start, end);
+               start++;
+               end--;
+           }
+       }
+       return start;
+    }
 }

@@ -2,5 +2,6 @@ export enum Algo {
  BUBBLE,
  SELECTION,
  INSERT,
- MERGE
+ MERGE,
+ QUICK
 }
