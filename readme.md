@@ -5,3 +5,4 @@
 - merge sort
 - quick sort
 - binary search
+- Fibonacci Number
