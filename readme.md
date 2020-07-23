@@ -6,3 +6,4 @@
 - quick sort
 - binary search
 - Fibonacci Number
+- Right bracket
