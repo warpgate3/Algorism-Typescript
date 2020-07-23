@@ -3,4 +3,6 @@
 - insert sort 
 - selection sort
 - merge sort
+- quick sort
 - binary search
+- Fibonacci Number
